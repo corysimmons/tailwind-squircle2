@@ -83,7 +83,7 @@ Where `n` controls the shape:
 - **Clip-path method**: Modern browsers (Chrome 55+, Firefox 54+, Safari 13+)
 - **Mask method**: Broader browser support including older versions
 
-## Example Project
+## Example Projects
 
 ### Next.js Example
 A complete implementation is available in the [examples/nextjs](./examples/nextjs/) directory.
@@ -101,6 +101,24 @@ cd examples/nextjs
 npm install
 npm run dev
 # Visit http://localhost:3000
+```
+
+### Vite Example
+A vanilla JavaScript implementation is available in the [examples/vite](./examples/vite/) directory.
+
+**Features:**
+- Vite with vanilla JavaScript
+- Tailwind CSS 4 with PostCSS integration
+- Interactive demo showcasing all squircle variations
+- Modern web components and layouts
+- Responsive design patterns
+
+**Quick Start:**
+```bash
+cd examples/vite
+npm install
+npm run dev
+# Visit http://localhost:5173
 ```
 
 ## Requirements

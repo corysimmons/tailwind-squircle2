@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "node build.js",
-    "dev": "cd examples/nextjs && npm run dev"
+    "example:nextjs": "cd examples/nextjs && npm run dev",
+    "example:vite": "cd examples/vite && npm run dev"
   },
   "keywords": [
     "tailwindcss",
