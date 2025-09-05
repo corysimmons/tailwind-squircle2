@@ -1,6 +1,6 @@
 {
   "name": "tailwind-squircle2",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "A Tailwind CSS plugin for creating squircle (superellipse) shapes using SVG clip paths",
   "main": "plugin.js",
   "scripts": {
@@ -19,10 +19,10 @@
   "author": "Cory Simmons",
   "license": "MIT",
   "peerDependencies": {
-    "tailwindcss": ">=3.0.0"
+    "tailwindcss": ">=4.0.0"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.1.13"
   },
   "repository": {
     "type": "git",
