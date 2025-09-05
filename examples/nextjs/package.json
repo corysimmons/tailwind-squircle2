@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run use-local && next dev",
+    "build": "npm run use-published && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "use-local": "npm install file:../..",
+    "use-published": "npm install tailwind-squircle2@^2.0.0",
+    "vercel-build": "npm run use-published && next build"
   },
   "dependencies": {
     "next": "15.5.2",
