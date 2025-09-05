@@ -50,7 +50,7 @@ export default function Home() {
               <h3 className="text-lg font-medium text-gray-900">Round Squircle</h3>
               <p className="text-sm text-gray-600 mb-2">n = 3 (very rounded)</p>
               <div className="bg-gray-900 text-gray-200 font-mono text-xs p-2 rounded">
-                &lt;div className="squircle-round bg-blue-500"&gt;&lt;/div&gt;
+                &lt;div className=&quot;squircle-round bg-blue-500&quot;&gt;&lt;/div&gt;
               </div>
             </div>
 
@@ -60,7 +60,7 @@ export default function Home() {
               <h3 className="text-lg font-medium text-gray-900">Perfect Squircle</h3>
               <p className="text-sm text-gray-600 mb-2">n = 4 (balanced)</p>
               <div className="bg-gray-900 text-gray-200 font-mono text-xs p-2 rounded">
-                &lt;div className="squircle bg-green-500"&gt;&lt;/div&gt;
+                &lt;div className=&quot;squircle bg-green-500&quot;&gt;&lt;/div&gt;
               </div>
             </div>
 
@@ -70,7 +70,7 @@ export default function Home() {
               <h3 className="text-lg font-medium text-gray-900">Soft Squircle</h3>
               <p className="text-sm text-gray-600 mb-2">n = 6 (softer corners)</p>
               <div className="bg-gray-900 text-gray-200 font-mono text-xs p-2 rounded">
-                &lt;div className="squircle-soft bg-purple-500"&gt;&lt;/div&gt;
+                &lt;div className=&quot;squircle-soft bg-purple-500&quot;&gt;&lt;/div&gt;
               </div>
             </div>
 
@@ -80,7 +80,7 @@ export default function Home() {
               <h3 className="text-lg font-medium text-gray-900">Sharp Squircle</h3>
               <p className="text-sm text-gray-600 mb-2">n = 8 (more square-like)</p>
               <div className="bg-gray-900 text-gray-200 font-mono text-xs p-2 rounded">
-                &lt;div className="squircle-sharp bg-pink-500"&gt;&lt;/div&gt;
+                &lt;div className=&quot;squircle-sharp bg-pink-500&quot;&gt;&lt;/div&gt;
               </div>
             </div>
           </div>
