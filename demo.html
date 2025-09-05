@@ -1,247 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Tailwind Squircle Plugin Demo</title>
-    <link href="./demo.css" rel="stylesheet">
+    <link
+      href="./demo.css"
+      rel="stylesheet"
+    />
     <style>
-        .code-block {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            font-family: 'Courier New', monospace;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-        }
+      .code-block {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        font-family: 'Courier New', monospace;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+      }
     </style>
-</head>
-<body class="bg-gray-50 min-h-screen">
+  </head>
+  <body class="bg-gray-50 min-h-screen">
     <div class="container mx-auto px-4 py-8 max-w-6xl">
-        <!-- Header -->
-        <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">Tailwind Squircle Plugin</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Create beautiful squircle shapes using SVG clip paths and the superellipse algorithm. 
-                Perfect for modern UI designs that need something between squares and circles.
-            </p>
-        </header>
+      <!-- Header -->
+      <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">
+          Tailwind Squircle Plugin
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Create beautiful squircle shapes using SVG clip paths and the
+          superellipse algorithm. Perfect for modern UI designs that need
+          something between squares and circles.
+        </p>
+      </header>
 
-        <!-- Installation -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Installation</h2>
-            <div class="code-block mb-4">
-npm install tailwindcss-squircle
+      <!-- Installation -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Installation</h2>
+        <div class="code-block mb-4">npm install tailwind-squircle2</div>
+        <p class="text-gray-600 mb-4">
+          Then add the plugin to your
+          <code class="bg-gray-200 px-2 py-1 rounded">tailwind.config.js</code>:
+        </p>
+        <div class="code-block mb-4">
+          module.exports = { content: ['./src/**/*.{html,js}'], plugins: [
+          require('tailwind-squircle2') ] }
+        </div>
+        <p class="text-gray-600 mb-4">Build your CSS:</p>
+        <div class="code-block">npx tailwindcss build -o styles.css</div>
+      </section>
+
+      <!-- Basic Examples -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">
+          Squircle Variations
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Round Squircle -->
+          <div class="text-center">
+            <div
+              class="squircle-sharp bg-gradient-to-br from-blue-400 to-blue-600 w-32 h-32 mx-auto mb-4"
+            ></div>
+            <h3 class="text-lg font-medium text-gray-900">Round Squircle</h3>
+            <p class="text-sm text-gray-600 mb-2">n = 3 (very rounded)</p>
+            <div class="code-block text-xs">
+              &lt;div class="squircle-sharp bg-blue-500"&gt;&lt;/div&gt;
             </div>
-            <p class="text-gray-600 mb-4">Then add the plugin to your <code class="bg-gray-200 px-2 py-1 rounded">tailwind.config.js</code>:</p>
-            <div class="code-block mb-4">
-module.exports = {
-  content: ['./src/**/*.{html,js}'],
-  plugins: [
-    require('tailwindcss-squircle')
-  ]
-}
+          </div>
+
+          <!-- Perfect Squircle -->
+          <div class="text-center">
+            <div
+              class="squircle bg-gradient-to-br from-green-400 to-green-600 w-32 h-32 mx-auto mb-4"
+            ></div>
+            <h3 class="text-lg font-medium text-gray-900">Perfect Squircle</h3>
+            <p class="text-sm text-gray-600 mb-2">n = 4 (balanced)</p>
+            <div class="code-block text-xs">
+              &lt;div class="squircle bg-green-500"&gt;&lt;/div&gt;
             </div>
-            <p class="text-gray-600 mb-4">Build your CSS:</p>
-            <div class="code-block">
-npx tailwindcss build -o styles.css
+          </div>
+
+          <!-- Soft Squircle -->
+          <div class="text-center">
+            <div
+              class="squircle-soft bg-gradient-to-br from-purple-400 to-purple-600 w-32 h-32 mx-auto mb-4"
+            ></div>
+            <h3 class="text-lg font-medium text-gray-900">Soft Squircle</h3>
+            <p class="text-sm text-gray-600 mb-2">n = 6 (softer corners)</p>
+            <div class="code-block text-xs">
+              &lt;div class="squircle-soft bg-purple-500"&gt;&lt;/div&gt;
             </div>
-        </section>
+          </div>
 
-        <!-- Basic Examples -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Squircle Variations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Round Squircle -->
-                <div class="text-center">
-                    <div class="squircle-sharp bg-gradient-to-br from-blue-400 to-blue-600 w-32 h-32 mx-auto mb-4"></div>
-                    <h3 class="text-lg font-medium text-gray-900">Round Squircle</h3>
-                    <p class="text-sm text-gray-600 mb-2">n = 3 (very rounded)</p>
-                    <div class="code-block text-xs">
-&lt;div class="squircle-sharp bg-blue-500"&gt;&lt;/div&gt;
-                    </div>
-                </div>
-
-                <!-- Perfect Squircle -->
-                <div class="text-center">
-                    <div class="squircle bg-gradient-to-br from-green-400 to-green-600 w-32 h-32 mx-auto mb-4"></div>
-                    <h3 class="text-lg font-medium text-gray-900">Perfect Squircle</h3>
-                    <p class="text-sm text-gray-600 mb-2">n = 4 (balanced)</p>
-                    <div class="code-block text-xs">
-&lt;div class="squircle bg-green-500"&gt;&lt;/div&gt;
-                    </div>
-                </div>
-
-                <!-- Soft Squircle -->
-                <div class="text-center">
-                    <div class="squircle-soft bg-gradient-to-br from-purple-400 to-purple-600 w-32 h-32 mx-auto mb-4"></div>
-                    <h3 class="text-lg font-medium text-gray-900">Soft Squircle</h3>
-                    <p class="text-sm text-gray-600 mb-2">n = 6 (softer corners)</p>
-                    <div class="code-block text-xs">
-&lt;div class="squircle-soft bg-purple-500"&gt;&lt;/div&gt;
-                    </div>
-                </div>
-
-                <!-- Sharp Squircle -->
-                <div class="text-center">
-                    <div class="squircle-round bg-gradient-to-br from-pink-400 to-pink-600 w-32 h-32 mx-auto mb-4"></div>
-                    <h3 class="text-lg font-medium text-gray-900">Sharp Squircle</h3>
-                    <p class="text-sm text-gray-600 mb-2">n = 8 (more square-like)</p>
-                    <div class="code-block text-xs">
-&lt;div class="squircle-round bg-pink-500"&gt;&lt;/div&gt;
-                    </div>
-                </div>
+          <!-- Sharp Squircle -->
+          <div class="text-center">
+            <div
+              class="squircle-round bg-gradient-to-br from-pink-400 to-pink-600 w-32 h-32 mx-auto mb-4"
+            ></div>
+            <h3 class="text-lg font-medium text-gray-900">Sharp Squircle</h3>
+            <p class="text-sm text-gray-600 mb-2">n = 8 (more square-like)</p>
+            <div class="code-block text-xs">
+              &lt;div class="squircle-round bg-pink-500"&gt;&lt;/div&gt;
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Practical Examples -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Practical Examples</h2>
-            
-            <!-- Cards -->
-            <div class="mb-8">
-                <h3 class="text-xl font-medium text-gray-900 mb-4">Card Components</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="squircle bg-white p-6 shadow-lg">
-                        <div class="w-12 h-12 squircle-soft bg-blue-100 mb-4 flex items-center justify-center">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Performance</h4>
-                        <p class="text-gray-600">Lightning-fast rendering with optimized SVG clip paths.</p>
-                    </div>
+      <!-- Practical Examples -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">
+          Practical Examples
+        </h2>
 
-                    <div class="squircle bg-white p-6 shadow-lg">
-                        <div class="w-12 h-12 squircle-soft bg-green-100 mb-4 flex items-center justify-center">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Easy to Use</h4>
-                        <p class="text-gray-600">Simple utility classes that work with any Tailwind setup.</p>
-                    </div>
-
-                    <div class="squircle bg-white p-6 shadow-lg">
-                        <div class="w-12 h-12 squircle-soft bg-purple-100 mb-4 flex items-center justify-center">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Responsive</h4>
-                        <p class="text-gray-600">Works perfectly across all screen sizes and devices.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Buttons -->
-            <div class="mb-8">
-                <h3 class="text-xl font-medium text-gray-900 mb-4">Button Styles</h3>
-                <div class="flex flex-wrap gap-4">
-                    <button class="squircle bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 font-medium transition-colors">
-                        Primary Button
-                    </button>
-                    <button class="squircle-soft bg-green-500 hover:bg-green-600 text-white px-6 py-3 font-medium transition-colors">
-                        Success Button
-                    </button>
-                    <button class="squircle-sharp bg-red-500 hover:bg-red-600 text-white px-6 py-3 font-medium transition-colors">
-                        Alert Button
-                    </button>
-                    <button class="squircle-round bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 font-medium transition-colors">
-                        Secondary
-                    </button>
-                </div>
+        <!-- Cards -->
+        <div class="mb-8">
+          <h3 class="text-xl font-medium text-gray-900 mb-4">
+            Card Components
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="squircle bg-white p-6 shadow-lg">
+              <div
+                class="w-12 h-12 squircle-soft bg-blue-100 mb-4 flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">
+                Performance
+              </h4>
+              <p class="text-gray-600">
+                Lightning-fast rendering with optimized SVG clip paths.
+              </p>
             </div>
 
-            <!-- Profile Images -->
-            <div class="mb-8">
-                <h3 class="text-xl font-medium text-gray-900 mb-4">Profile Images</h3>
-                <div class="flex gap-4 items-end">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face" 
-                         alt="Profile" class="squircle w-16 h-16 object-cover">
-                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face" 
-                         alt="Profile" class="squircle w-20 h-20 object-cover">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" 
-                         alt="Profile" class="squircle w-24 h-24 object-cover">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&h=112&fit=crop&crop=face" 
-                         alt="Profile" class="squircle w-28 h-28 object-cover">
-                </div>
+            <div class="squircle bg-white p-6 shadow-lg">
+              <div
+                class="w-12 h-12 squircle-soft bg-green-100 mb-4 flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">
+                Easy to Use
+              </h4>
+              <p class="text-gray-600">
+                Simple utility classes that work with any Tailwind setup.
+              </p>
             </div>
-        </section>
 
-        <!-- Mask Examples -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Mask Alternative</h2>
-            <p class="text-gray-600 mb-4">
-                For browsers that don't support clip-path or when you need different behavior, 
-                use the mask variants:
-            </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="squircle-mask w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600"></div>
-                <div class="squircle-soft-mask w-32 h-32 bg-gradient-to-br from-green-400 to-green-600"></div>
-                <div class="squircle-sharp-mask w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600"></div>
-                <div class="squircle-round-mask w-32 h-32 bg-gradient-to-br from-pink-400 to-pink-600"></div>
+            <div class="squircle bg-white p-6 shadow-lg">
+              <div
+                class="w-12 h-12 squircle-soft bg-purple-100 mb-4 flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+                  ></path>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">
+                Responsive
+              </h4>
+              <p class="text-gray-600">
+                Works perfectly across all screen sizes and devices.
+              </p>
             </div>
-            <div class="code-block mt-4">
-&lt;div class="squircle-mask bg-blue-500"&gt;&lt;/div&gt;
-&lt;div class="squircle-soft-mask bg-green-500"&gt;&lt;/div&gt;
-            </div>
-        </section>
+          </div>
+        </div>
 
-        <!-- Comparison -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Comparison with Standard Shapes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <div class="w-32 h-32 bg-blue-500 mx-auto mb-4"></div>
-                    <h3 class="text-lg font-medium">Square</h3>
-                    <p class="text-sm text-gray-600">Standard rectangle</p>
-                </div>
-                <div>
-                    <div class="squircle w-32 h-32 bg-green-500 mx-auto mb-4"></div>
-                    <h3 class="text-lg font-medium">Squircle</h3>
-                    <p class="text-sm text-gray-600">Perfect balance</p>
-                </div>
-                <div>
-                    <div class="w-32 h-32 bg-purple-500 rounded-full mx-auto mb-4"></div>
-                    <h3 class="text-lg font-medium">Circle</h3>
-                    <p class="text-sm text-gray-600">Fully rounded</p>
-                </div>
-            </div>
-        </section>
+        <!-- Buttons -->
+        <div class="mb-8">
+          <h3 class="text-xl font-medium text-gray-900 mb-4">Button Styles</h3>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="squircle bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 font-medium transition-colors"
+            >
+              Primary Button
+            </button>
+            <button
+              class="squircle-soft bg-green-500 hover:bg-green-600 text-white px-6 py-3 font-medium transition-colors"
+            >
+              Success Button
+            </button>
+            <button
+              class="squircle-sharp bg-red-500 hover:bg-red-600 text-white px-6 py-3 font-medium transition-colors"
+            >
+              Alert Button
+            </button>
+            <button
+              class="squircle-round bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 font-medium transition-colors"
+            >
+              Secondary
+            </button>
+          </div>
+        </div>
 
-        <!-- Technical Details -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Technical Details</h2>
-            <div class="bg-white rounded-lg p-6 shadow-sm border">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Superellipse Formula</h3>
-                <p class="text-gray-600 mb-4">
-                    The plugin uses the superellipse (Lamé curve) formula in parametric form:
-                </p>
-                <div class="code-block mb-4">
-x = sign(cos(t)) × |cos(t)|^(2/n)
-y = sign(sin(t)) × |sin(t)|^(2/n)
-                </div>
-                <p class="text-gray-600 mb-4">
-                    Where <code class="bg-gray-200 px-2 py-1 rounded">n</code> controls the shape:
-                </p>
-                <ul class="list-disc list-inside text-gray-600 space-y-1">
-                    <li><strong>n = 2:</strong> Ellipse/Circle</li>
-                    <li><strong>n = 3:</strong> Very rounded squircle</li>
-                    <li><strong>n = 4:</strong> Perfect squircle (balanced)</li>
-                    <li><strong>n = 6:</strong> Soft squircle (softer corners)</li>
-                    <li><strong>n = 8:</strong> Sharp squircle (more square-like)</li>
-                    <li><strong>n → ∞:</strong> Square</li>
-                </ul>
-            </div>
-        </section>
+        <!-- Profile Images -->
+        <div class="mb-8">
+          <h3 class="text-xl font-medium text-gray-900 mb-4">Profile Images</h3>
+          <div class="flex gap-4 items-end">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face"
+              alt="Profile"
+              class="squircle w-16 h-16 object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face"
+              alt="Profile"
+              class="squircle w-20 h-20 object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face"
+              alt="Profile"
+              class="squircle w-24 h-24 object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&h=112&fit=crop&crop=face"
+              alt="Profile"
+              class="squircle w-28 h-28 object-cover"
+            />
+          </div>
+        </div>
+      </section>
 
-        <!-- Footer -->
-        <footer class="text-center py-8 border-t">
-            <p class="text-gray-600">
-                Made with ❤️ using the superellipse algorithm and SVG clip paths
-            </p>
-        </footer>
+      <!-- Mask Examples -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">
+          Mask Alternative
+        </h2>
+        <p class="text-gray-600 mb-4">
+          For browsers that don't support clip-path or when you need different
+          behavior, use the mask variants:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div
+            class="squircle-mask w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600"
+          ></div>
+          <div
+            class="squircle-soft-mask w-32 h-32 bg-gradient-to-br from-green-400 to-green-600"
+          ></div>
+          <div
+            class="squircle-sharp-mask w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600"
+          ></div>
+          <div
+            class="squircle-round-mask w-32 h-32 bg-gradient-to-br from-pink-400 to-pink-600"
+          ></div>
+        </div>
+        <div class="code-block mt-4">
+          &lt;div class="squircle-mask bg-blue-500"&gt;&lt;/div&gt; &lt;div
+          class="squircle-soft-mask bg-green-500"&gt;&lt;/div&gt;
+        </div>
+      </section>
+
+      <!-- Comparison -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">
+          Comparison with Standard Shapes
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="w-32 h-32 bg-blue-500 mx-auto mb-4"></div>
+            <h3 class="text-lg font-medium">Square</h3>
+            <p class="text-sm text-gray-600">Standard rectangle</p>
+          </div>
+          <div>
+            <div class="squircle w-32 h-32 bg-green-500 mx-auto mb-4"></div>
+            <h3 class="text-lg font-medium">Squircle</h3>
+            <p class="text-sm text-gray-600">Perfect balance</p>
+          </div>
+          <div>
+            <div
+              class="w-32 h-32 bg-purple-500 rounded-full mx-auto mb-4"
+            ></div>
+            <h3 class="text-lg font-medium">Circle</h3>
+            <p class="text-sm text-gray-600">Fully rounded</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Details -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">
+          Technical Details
+        </h2>
+        <div class="bg-white rounded-lg p-6 shadow-sm border">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">
+            Superellipse Formula
+          </h3>
+          <p class="text-gray-600 mb-4">
+            The plugin uses the superellipse (Lamé curve) formula in parametric
+            form:
+          </p>
+          <div class="code-block mb-4">
+            x = sign(cos(t)) × |cos(t)|^(2/n) y = sign(sin(t)) × |sin(t)|^(2/n)
+          </div>
+          <p class="text-gray-600 mb-4">
+            Where <code class="bg-gray-200 px-2 py-1 rounded">n</code> controls
+            the shape:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li><strong>n = 2:</strong> Ellipse/Circle</li>
+            <li><strong>n = 3:</strong> Very rounded squircle</li>
+            <li><strong>n = 4:</strong> Perfect squircle (balanced)</li>
+            <li><strong>n = 6:</strong> Soft squircle (softer corners)</li>
+            <li><strong>n = 8:</strong> Sharp squircle (more square-like)</li>
+            <li><strong>n → ∞:</strong> Square</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center py-8 border-t">
+        <p class="text-gray-600">
+          Made with ❤️ using the superellipse algorithm and SVG clip paths
+        </p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

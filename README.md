@@ -9,7 +9,7 @@ Squircles are shapes that sit between squares and circles, created using the sup
 ## Installation
 
 ```bash
-npm install tailwind-squircle
+npm install tailwind-squircle2
 ```
 
 Add the plugin to your `tailwind.config.js`:
@@ -17,7 +17,7 @@ Add the plugin to your `tailwind.config.js`:
 ```javascript
 module.exports = {
   plugins: [
-    require('tailwind-squircle')
+    require('tailwind-squircle2')
   ]
 }
 ```
