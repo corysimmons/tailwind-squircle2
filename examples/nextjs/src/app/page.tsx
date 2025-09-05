@@ -23,18 +23,23 @@ export default function Home() {
             npm install tailwind-squircle2
           </div>
           <p className="text-gray-600 mb-4">
-            Then add the plugin to your{" "}
-            <code className="bg-gray-200 px-2 py-1 rounded">tailwind.config.js</code>:
+            Then import the plugin in your CSS file (e.g.,{" "}
+            <code className="bg-gray-200 px-2 py-1 rounded">globals.css</code>):
           </p>
           <div className="bg-gray-900 text-gray-200 font-mono p-4 rounded-lg mb-4">
-            {`module.exports = {
-  content: ['./src/**/*.{html,js}'],
-  plugins: [require('tailwind-squircle2')]
-}`}
+            {`@import "tailwindcss";
+@import "tailwind-squircle2/css";`}
           </div>
-          <p className="text-gray-600 mb-4">Build your CSS:</p>
+          <p className="text-gray-600 mb-4">
+            Configure PostCSS in your{" "}
+            <code className="bg-gray-200 px-2 py-1 rounded">postcss.config.js</code>:
+          </p>
           <div className="bg-gray-900 text-gray-200 font-mono p-4 rounded-lg">
-            npx tailwindcss build -o styles.css
+            {`export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+}`}
           </div>
         </section>
 
