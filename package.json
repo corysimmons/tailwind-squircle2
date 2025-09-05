@@ -1,6 +1,6 @@
 {
   "name": "tailwind-squircle2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Tailwind CSS plugin for creating squircle (superellipse) shapes using SVG clip paths",
   "main": "plugin.js",
   "scripts": {
