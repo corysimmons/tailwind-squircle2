@@ -52,7 +52,7 @@ function generateSquircleSVGPath(n = 4, size = 100) {
   return points.join(' ');
 }
 
-const squirclePlugin = plugin(function({ addUtilities, e }) {
+const squirclePlugin = plugin(function({ addUtilities }) {
   const squircleUtilities = {};
   
   // Default squircle variations
@@ -66,7 +66,7 @@ const squirclePlugin = plugin(function({ addUtilities, e }) {
   Object.entries(squircleVariations).forEach(([name, n]) => {
     const clipPath = generateSquirclePath(n);
     
-    squircleUtilities[`.${e(name)}`] = {
+    squircleUtilities[`.${name}`] = {
       'clip-path': clipPath,
     };
   });
@@ -77,7 +77,7 @@ const squirclePlugin = plugin(function({ addUtilities, e }) {
     const svgString = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="${svgPath}" fill="black"/></svg>`;
     const dataUrl = `data:image/svg+xml,${encodeURIComponent(svgString)}`;
     
-    squircleUtilities[`.${e(name)}-mask`] = {
+    squircleUtilities[`.${name}-mask`] = {
       '-webkit-mask-image': `url("${dataUrl}")`,
       'mask-image': `url("${dataUrl}")`,
       '-webkit-mask-size': 'contain',
