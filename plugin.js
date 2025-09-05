@@ -59,8 +59,8 @@ const squirclePlugin = plugin(function({ addUtilities, e }) {
   const squircleVariations = {
     'squircle': 4,      // Perfect squircle
     'squircle-soft': 6, // Softer, more rounded
-    'squircle-sharp': 3, // Sharper, more square-like
-    'squircle-round': 8, // Very rounded
+    'squircle-sharp': 8, // Sharper, more square-like
+    'squircle-round': 3, // Very rounded
   };
   
   Object.entries(squircleVariations).forEach(([name, n]) => {

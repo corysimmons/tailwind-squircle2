@@ -61,12 +61,12 @@
           <!-- Round Squircle -->
           <div class="text-center">
             <div
-              class="squircle-sharp bg-gradient-to-br from-blue-400 to-blue-600 w-32 h-32 mx-auto mb-4"
+              class="squircle-round bg-gradient-to-br from-blue-400 to-blue-600 w-32 h-32 mx-auto mb-4"
             ></div>
             <h3 class="text-lg font-medium text-gray-900">Round Squircle</h3>
             <p class="text-sm text-gray-600 mb-2">n = 3 (very rounded)</p>
             <div class="code-block text-xs">
-              &lt;div class="squircle-sharp bg-blue-500"&gt;&lt;/div&gt;
+              &lt;div class="squircle-round bg-blue-500"&gt;&lt;/div&gt;
             </div>
           </div>
 
@@ -97,12 +97,12 @@
           <!-- Sharp Squircle -->
           <div class="text-center">
             <div
-              class="squircle-round bg-gradient-to-br from-pink-400 to-pink-600 w-32 h-32 mx-auto mb-4"
+              class="squircle-sharp bg-gradient-to-br from-pink-400 to-pink-600 w-32 h-32 mx-auto mb-4"
             ></div>
             <h3 class="text-lg font-medium text-gray-900">Sharp Squircle</h3>
             <p class="text-sm text-gray-600 mb-2">n = 8 (more square-like)</p>
             <div class="code-block text-xs">
-              &lt;div class="squircle-round bg-pink-500"&gt;&lt;/div&gt;
+              &lt;div class="squircle-sharp bg-pink-500"&gt;&lt;/div&gt;
             </div>
           </div>
         </div>
@@ -279,8 +279,10 @@
           ></div>
         </div>
         <div class="code-block mt-4">
-          &lt;div class="squircle-mask bg-blue-500"&gt;&lt;/div&gt; &lt;div
-          class="squircle-soft-mask bg-green-500"&gt;&lt;/div&gt;
+          &lt;div class="squircle-round-mask bg-blue-500"&gt;&lt;/div&gt;<br>
+          &lt;div class="squircle-mask bg-green-500"&gt;&lt;/div&gt;<br>
+          &lt;div class="squircle-soft-mask bg-purple-500"&gt;&lt;/div&gt;<br>
+          &lt;div class="squircle-sharp-mask bg-pink-500"&gt;&lt;/div&gt;
         </div>
       </section>
 
@@ -289,11 +291,16 @@
         <h2 class="text-2xl font-semibold text-gray-900 mb-6">
           Comparison with Standard Shapes
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
           <div>
             <div class="w-32 h-32 bg-blue-500 mx-auto mb-4"></div>
             <h3 class="text-lg font-medium">Square</h3>
             <p class="text-sm text-gray-600">Standard rectangle</p>
+          </div>
+          <div>
+            <div class="w-32 h-32 bg-orange-500 rounded-2xl mx-auto mb-4"></div>
+            <h3 class="text-lg font-medium">Rounded Rectangle</h3>
+            <p class="text-sm text-gray-600">Standard border-radius</p>
           </div>
           <div>
             <div class="squircle w-32 h-32 bg-green-500 mx-auto mb-4"></div>
