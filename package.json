@@ -1,6 +1,6 @@
 {
   "name": "tailwind-squircle2",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Tailwind CSS v4 plugin for creating squircle (superellipse) shapes using CSS utilities",
   "main": "plugin.js",
   "exports": {
