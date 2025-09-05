@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const path = require('path');
 
 // Import our plugin
 const squirclePlugin = require('./plugin.js');
@@ -18,9 +17,9 @@ const mockAddUtilities = (utilities) => {
 const pluginInstance = squirclePlugin;
 pluginInstance.handler({ addUtilities: mockAddUtilities });
 
-// Convert captured utilities to v4 @utility format
-function convertToV4Utilities(utilities) {
-  let css = '/*\n * Tailwind CSS v4 Squircle Plugin\n * Generated from plugin.js\n */\n\n';
+// Convert captured utilities to @utility format
+function convertToCSSUtilities(utilities) {
+  let css = '/*\n * Tailwind CSS Squircle Plugin\n * Generated from plugin.js\n */\n\n';
   
   for (const [selector, styles] of Object.entries(utilities)) {
     // Remove the leading dot from selector
@@ -39,13 +38,13 @@ function convertToV4Utilities(utilities) {
   return css;
 }
 
-// Generate the v4 CSS
-const v4CSS = convertToV4Utilities(capturedUtilities);
+// Generate the CSS
+const css = convertToCSSUtilities(capturedUtilities);
 
-// Write to plugin-v4.css
-fs.writeFileSync('./plugin-v4.css', v4CSS);
+// Write to plugin.css
+fs.writeFileSync('./plugin.css', css);
 
-console.log('✅ Generated plugin-v4.css from plugin.js');
+console.log('✅ Generated plugin.css from plugin.js');
 console.log(`📝 Generated ${Object.keys(capturedUtilities).length} utilities:`);
 Object.keys(capturedUtilities).forEach(selector => {
   console.log(`   - ${selector}`);

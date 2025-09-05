@@ -1,10 +1,14 @@
 # Tailwind Squircle Plugin
 
-A Tailwind CSS plugin that adds squircle (superellipse) utilities using SVG clip paths and the superellipse algorithm.
+A Tailwind CSS plugin for creating beautiful squircle (superellipse) shapes using CSS utilities.
 
-## What are Squircles?
+## Features
 
-Squircles are shapes that sit between squares and circles, created using the superellipse mathematical formula. They provide a modern, smooth aesthetic that's popular in contemporary UI design, especially in mobile interfaces and modern web applications.
+- **Pure CSS Implementation**: Uses Tailwind CSS `@utility` directives
+- **Mathematical Precision**: Generated using the superellipse (Lamé curve) algorithm
+- **Multiple Variations**: 4 different roundness levels from very rounded to sharp
+- **Browser Compatibility**: Includes both `clip-path` and `mask` variants
+- **Zero JavaScript**: No build-time JavaScript required
 
 ## Installation
 
@@ -12,71 +16,56 @@ Squircles are shapes that sit between squares and circles, created using the sup
 npm install tailwind-squircle2
 ```
 
-Add the plugin to your `tailwind.config.js`:
-
-```javascript
-module.exports = {
-  plugins: [
-    require('tailwind-squircle2')
-  ]
-}
-```
-
 ## Usage
 
-The plugin provides several squircle variations as utility classes:
+Add the plugin to your CSS file using Tailwind CSS import system:
 
-### Clip Path Utilities
+```css
+@import "tailwindcss";
+@import "tailwind-squircle2/css";
+```
 
-- `.squircle-sharp` - Sharp squircle (n=3, more square-like)
-- `.squircle` - Perfect squircle (n=4, balanced)
-- `.squircle-soft` - Soft squircle (n=6, rounded corners)
-- `.squircle-round` - Very rounded squircle (n=8, very rounded)
+## Available Classes
 
-### Mask Utilities (Alternative)
+### Primary Classes (clip-path method)
+- `squircle-round` - Very rounded (n=3)
+- `squircle` - Perfect balance (n=4)
+- `squircle-soft` - Softer corners (n=6)
+- `squircle-sharp` - More square-like (n=8)
 
-For better browser compatibility or different behavior:
-
-- `.squircle-sharp-mask`
-- `.squircle-mask`
-- `.squircle-soft-mask`
-- `.squircle-round-mask`
+### Alternative Classes (mask method)
+- `squircle-round-mask` - Very rounded (mask)
+- `squircle-mask` - Perfect balance (mask)
+- `squircle-soft-mask` - Softer corners (mask)  
+- `squircle-sharp-mask` - More square-like (mask)
 
 ## Examples
 
 ### Basic Usage
 
 ```html
-<div class="squircle bg-blue-500 w-32 h-32"></div>
-<div class="squircle-soft bg-green-500 w-32 h-32"></div>
-```
-
-### Card Components
-
-```html
-<div class="squircle bg-white p-6 shadow-lg">
-  <h3>Card Title</h3>
-  <p>Card content with squircle shape</p>
-</div>
-```
-
-### Buttons
-
-```html
-<button class="squircle bg-blue-500 hover:bg-blue-600 text-white px-6 py-3">
-  Squircle Button
+<!-- Perfect squircle button -->
+<button class="squircle bg-blue-500 px-6 py-3 text-white">
+  Click me
 </button>
+
+<!-- Very rounded squircle card -->
+<div class="squircle-round bg-white p-6 shadow-lg">
+  <h3>Card Title</h3>
+  <p>Card content...</p>
+</div>
+
+<!-- Squircle profile image -->
+<img src="profile.jpg" class="squircle w-24 h-24 object-cover" alt="Profile" />
 ```
 
-### Profile Images
+## What are Squircles?
 
-```html
-<div class="squircle w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500"></div>
-```
+Squircles are shapes that sit between squares and circles, created using the superellipse mathematical formula. They provide a modern, smooth aesthetic that's popular in contemporary UI design, especially in mobile interfaces and modern web applications.
 
 ## Technical Details
 
-The plugin uses the superellipse (Lamé curve) formula in parametric form:
+The squircle shapes are generated using the superellipse mathematical formula:
 
 ```
 x = sign(cos(t)) × |cos(t)|^(2/n)
@@ -84,21 +73,40 @@ y = sign(sin(t)) × |sin(t)|^(2/n)
 ```
 
 Where `n` controls the shape:
-- **n = 2**: Circle/Ellipse
-- **n = 3**: Sharp squircle (more square-like)
-- **n = 4**: Perfect squircle (balanced)
-- **n = 6**: Soft squircle (rounded corners)
-- **n = 8**: Very rounded squircle
-- **n → ∞**: Square
+- **n = 3**: Very rounded, close to a circle
+- **n = 4**: Perfect squircle, balanced between square and circle
+- **n = 6**: Softer corners, more square-like
+- **n = 8**: Sharp squircle, approaching a rounded rectangle
 
 ## Browser Support
 
-- **Clip-path utilities**: Modern browsers (Chrome 55+, Firefox 54+, Safari 13.1+)
-- **Mask utilities**: Wider browser support including older versions
+- **Clip-path method**: Modern browsers (Chrome 55+, Firefox 54+, Safari 13+)
+- **Mask method**: Broader browser support including older versions
 
-## Demo
+## Example Project
 
-Open `demo.html` in your browser to see all the examples and variations in action.
+### Next.js Example
+A complete implementation is available in the [examples/nextjs](./examples/nextjs/) directory.
+
+**Features:**
+- Next.js 15 with App Router
+- Tailwind CSS with CSS-first configuration
+- TypeScript support
+- React components showcasing squircle usage
+- Optimized Next.js Image components with squircle clipping
+
+**Quick Start:**
+```bash
+cd examples/nextjs
+npm install
+npm run dev
+# Visit http://localhost:3000
+```
+
+## Requirements
+
+- Tailwind CSS 4.x
+- Modern browser with CSS `clip-path` or `mask` support
 
 ## License
 

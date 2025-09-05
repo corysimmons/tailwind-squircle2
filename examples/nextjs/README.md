@@ -29,21 +29,11 @@ This example showcases:
 
 ## Configuration
 
-The plugin is configured in `tailwind.config.ts`:
+The plugin uses Tailwind CSS CSS-first approach in `src/app/globals.css`:
 
-```typescript
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  plugins: [require("tailwind-squircle2")],
-};
-
-export default config;
+```css
+@import "tailwindcss";
+@import "tailwind-squircle2/css";
 ```
 
 ## Available Classes
